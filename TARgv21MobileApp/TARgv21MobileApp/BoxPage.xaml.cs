@@ -24,8 +24,8 @@ namespace TARgv21MobileApp
                 CornerRadius = 20,
                 WidthRequest=200,
                 HeightRequest=300,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
             TapGestureRecognizer tap = new TapGestureRecognizer();
