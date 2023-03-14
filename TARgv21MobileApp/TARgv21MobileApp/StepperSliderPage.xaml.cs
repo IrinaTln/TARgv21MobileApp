@@ -46,7 +46,7 @@ namespace TARgv21MobileApp
             AbsoluteLayout.SetLayoutBounds(slider, new Rectangle(0.5, 0.6, 200, 100));
             AbsoluteLayout.SetLayoutFlags(slider, AbsoluteLayoutFlags.PositionProportional);
 
-            AbsoluteLayout.SetLayoutBounds(label, new Rectangle(0.6, 0.8, 200, 100));
+            AbsoluteLayout.SetLayoutBounds(label, new Rectangle(0.6, 0.9, 200, 100));
             AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.PositionProportional);
 
             Content = abs;

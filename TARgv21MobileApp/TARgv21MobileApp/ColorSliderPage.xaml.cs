@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using static System.Net.WebRequestMethods;
@@ -95,6 +96,35 @@ namespace TARgv21MobileApp
                 HeightRequest = 300
             };
 
+            List<Object> objects = new List<Object> 
+            { 
+                boxView,
+                sliderRed,
+                labelRed,
+                sliderGreen,
+                labelGreen,
+                sliderBlue,
+                labelBlue,
+                stepper,
+                labelOppacity
+            };
+
+            //AbsoluteLayout code example.
+
+            AbsoluteLayout abs = new AbsoluteLayout();
+            double y = 0;
+            foreach (var item in objects)
+            {
+                y = y + 0.1;
+                AbsoluteLayout.SetLayoutBounds((BindableObject)item, new Rectangle(0.2, y, 300, 100));
+                AbsoluteLayout.SetLayoutFlags((BindableObject)item, AbsoluteLayoutFlags.PositionProportional);
+                abs.Children.Add((View)(BindableObject)item);
+            }
+
+            Content = abs;
+
+            /*This code sample puts elements more naturally. For best elements position use Grid or FlexLayout
+            
             StackLayout stack = new StackLayout
             {
                 Children = 
@@ -112,7 +142,7 @@ namespace TARgv21MobileApp
             };
 
             stack.BackgroundColor = Color.White;
-            Content = stack;
+            Content = stack;*/
         }
 
         private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
