@@ -109,7 +109,7 @@ namespace TARgv21MobileApp
                 labelOppacity
             };
 
-            //AbsoluteLayout code example.
+            /*AbsoluteLayout code example.
 
             AbsoluteLayout abs = new AbsoluteLayout();
             double y = 0;
@@ -121,9 +121,9 @@ namespace TARgv21MobileApp
                 abs.Children.Add((View)(BindableObject)item);
             }
 
-            Content = abs;
+            Content = abs;*/
 
-            /*This code sample puts elements more naturally. For best elements position use Grid or FlexLayout
+            //This code sample puts elements more naturally. For best elements position use Grid or FlexLayout
             
             StackLayout stack = new StackLayout
             {
@@ -142,7 +142,7 @@ namespace TARgv21MobileApp
             };
 
             stack.BackgroundColor = Color.White;
-            Content = stack;*/
+            Content = stack;
         }
 
         private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)

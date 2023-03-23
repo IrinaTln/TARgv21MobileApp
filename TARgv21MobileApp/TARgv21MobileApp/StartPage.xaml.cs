@@ -20,7 +20,9 @@ namespace TARgv21MobileApp
             new TrafficLights(), 
             new DateTimePage(), 
             new StepperSliderPage(),
-            new ColorSliderPage()
+            new ColorSliderPage(),
+            new FramePage(),
+            new ImagePage()
         };
 
         List<string> texts = new List<string> 
@@ -31,7 +33,9 @@ namespace TARgv21MobileApp
             "Traffic lights Page", 
             "Date Time Page", 
             "Stepper Slider Page",
-            "Color Slider Page"
+            "Color Slider Page",
+            "Frame page",
+            "Image page"
         };
         
         //This staff for making buttons all the time with differnts colors
