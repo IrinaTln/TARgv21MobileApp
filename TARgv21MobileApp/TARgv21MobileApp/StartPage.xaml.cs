@@ -22,7 +22,8 @@ namespace TARgv21MobileApp
             new StepperSliderPage(),
             new ColorSliderPage(),
             new FramePage(),
-            new ImagePage()
+            new ImagePage(),
+            new PopUpPage()
         };
 
         List<string> texts = new List<string> 
@@ -35,7 +36,8 @@ namespace TARgv21MobileApp
             "Stepper Slider Page",
             "Color Slider Page",
             "Frame page",
-            "Image page"
+            "Image page",
+            "PopUp Page"
         };
         
         //This staff for making buttons all the time with differnts colors

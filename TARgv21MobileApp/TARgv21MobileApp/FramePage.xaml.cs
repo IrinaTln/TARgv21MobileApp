@@ -81,6 +81,7 @@ namespace TARgv21MobileApp
                 BorderColor = Color.FromRgb(20, 120, 255),
                 CornerRadius = 20,
                 VerticalOptions = LayoutOptions.FillAndExpand,
+                BackgroundColor = Color.FromHex("#ffccff")
             };
 
             StackLayout stack = new StackLayout
