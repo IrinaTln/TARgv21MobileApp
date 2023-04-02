@@ -12,10 +12,28 @@ namespace TARgv21MobileApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopUpPage : ContentPage
     {
+        Button getName;
         Button alertListButton;
         Button alertQuestionButton;
+        Label label;
         public PopUpPage()
         {
+            label = new Label
+            {
+                Text = "",
+                VerticalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.End,
+                Margin = 10
+            };
+
+            getName = new Button
+            {
+                Text = "Start game",
+                VerticalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.Center
+            };
+            getName.Clicked += GetName_ClickedAsync;
+
             Button alertButton = new Button
             {
                 Text = "Message",
@@ -51,7 +69,13 @@ namespace TARgv21MobileApp
             };
             alertQuestionButton.Clicked += AlertQuestionButton_Clicked;
 
-            Content = new StackLayout { Children = { alertButton, alertYesOrCancel, alertListButton, alertQuestionButton } };
+            Content = new StackLayout { Children = { label, getName, alertButton, alertYesOrCancel, alertListButton, alertQuestionButton } };
+        }
+
+        private async void GetName_ClickedAsync(object sender, EventArgs e)
+        {
+            string result = await DisplayPromptAsync("Quastion", "Insert your name: ", "OK", keyboard: Keyboard.Chat);
+            label.Text = "Hello, " + result +"!";
         }
 
         private async void AlertQuestionButton_Clicked(object sender, EventArgs e)

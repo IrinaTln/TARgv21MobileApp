@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,7 +19,8 @@ namespace TARgv21MobileApp
             new ColorSliderPage(),
             new FramePage(),
             new ImagePage(),
-            new PopUpPage()
+            new PopUpPage(),
+            new DictionaryPage(),
         };
 
         List<string> texts = new List<string> 
@@ -37,7 +34,8 @@ namespace TARgv21MobileApp
             "Color Slider Page",
             "Frame page",
             "Image page",
-            "PopUp Page"
+            "PopUp Page",
+            "Dictionary Page",
         };
         
         //This staff for making buttons all the time with differnts colors
