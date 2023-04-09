@@ -21,6 +21,8 @@ namespace TARgv21MobileApp
             new ImagePage(),
             new PopUpPage(),
             new DictionaryPage(),
+            new PickerPage(),
+            new TablePage(),
         };
 
         List<string> texts = new List<string> 
@@ -36,6 +38,8 @@ namespace TARgv21MobileApp
             "Image page",
             "PopUp Page",
             "Dictionary Page",
+            "Picker Page",
+            "Table Page"
         };
         
         //This staff for making buttons all the time with differnts colors
