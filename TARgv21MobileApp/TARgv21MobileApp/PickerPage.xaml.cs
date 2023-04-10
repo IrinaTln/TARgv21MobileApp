@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,8 @@ namespace TARgv21MobileApp
     {
         Picker picker;
         WebView webview;
+        Entry entry;
+        Button textButton;
         Frame frame;       
         string[] pages = new string[3] { "https://tahvel.edu.ee/#/", "https://moodle.edu.ee/my/", "https://www.tthk.ee/" };
         StackLayout stack;
@@ -30,6 +33,12 @@ namespace TARgv21MobileApp
 
             picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
 
+            entry = new Entry { };
+            entry.Completed += Entry_Completed;
+            textButton = new Button { Text = "Homepage" };
+            textButton.Clicked += TextButton_Clicked;
+
+
             frame = new Frame 
             { 
                 Content = webview,
@@ -42,9 +51,27 @@ namespace TARgv21MobileApp
                 HasShadow = true
             };
 
-            stack = new StackLayout { Children = {picker, frame} };
+            stack = new StackLayout { Children = {picker, frame, entry, textButton} };
             Content = stack;
 
+        }
+
+        private void TextButton_Clicked(object sender, EventArgs e)
+        {
+            webview.Source = new UrlWebViewSource { Url = (string)Preferences.Get("link", "https://postimess.ee/") };
+        }
+
+        protected override void OnAppearing()
+        {
+            object link = "";
+            entry.Text = Preferences.Get("link", "http://www.postimees.ee/");
+            base.OnAppearing();
+        }
+
+        private void Entry_Completed(object sender, EventArgs e)
+        {
+            string value = "http://www." + entry.Text;
+            Preferences.Set("link", value);
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)

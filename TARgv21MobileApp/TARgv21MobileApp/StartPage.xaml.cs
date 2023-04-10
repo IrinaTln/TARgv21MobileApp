@@ -8,6 +8,9 @@ namespace TARgv21MobileApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StartPage : ContentPage
     {
+        StackLayout st;
+        ScrollView scrollView;
+
         List<ContentPage> pages = new List<ContentPage>() 
         { 
             new EditorPage(), 
@@ -23,6 +26,7 @@ namespace TARgv21MobileApp
             new DictionaryPage(),
             new PickerPage(),
             new TablePage(),
+            new FilePage()
         };
 
         List<string> texts = new List<string> 
@@ -39,7 +43,8 @@ namespace TARgv21MobileApp
             "PopUp Page",
             "Dictionary Page",
             "Picker Page",
-            "Table Page"
+            "Table Page",
+            "File Page"
         };
         
         //This staff for making buttons all the time with differnts colors
@@ -57,7 +62,7 @@ namespace TARgv21MobileApp
                               
             };
 
-            StackLayout st = new StackLayout();
+            st = new StackLayout();
 
             for (int i = 0; i < pages.Count; i++)
             {
@@ -71,7 +76,14 @@ namespace TARgv21MobileApp
                 st.Children.Add(button);
                 button.Clicked += Button_Clicked;
             }
-            Content = st;
+
+            scrollView = new ScrollView
+            {
+                Content = st
+            };
+
+            Content = scrollView;
+            
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
